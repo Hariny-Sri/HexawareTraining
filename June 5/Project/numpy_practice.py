@@ -13,3 +13,7 @@ print(np.max(arr))
 print(np.min(arr))
 
 print(arr.shape)
+arr=np.zeros((3,4))
+print(arr)
+arr=np.ones((2,3))
+arr=np.arange(1,11)
