@@ -1,0 +1,56 @@
+use ExpenseTracker
+
+db.receipts.insertMany([
+{
+    user_id: 1,
+    receipt_no: "R101",
+    store: "Super Market",
+    amount: 450,
+    items: ["Milk","Bread"],
+    date: ISODate("2026-06-01")
+},
+{
+    user_id: 2,
+    receipt_no: "R102",
+    store: "Fashion Store",
+    amount: 1500,
+    items: ["Shirt","Jeans"],
+    date: ISODate("2026-06-03")
+}
+]);
+
+db.receipts.insertMany([
+{
+    user_id: 1,
+    receipt_no: "R101",
+    store: "Super Market",
+    amount: 450,
+    items: ["Milk","Bread"],
+    date: ISODate("2026-06-01")
+},
+{
+    user_id: 2,
+    receipt_no: "R102",
+    store: "Fashion Store",
+    amount: 1500,
+    items: ["Shirt","Jeans"],
+    date: ISODate("2026-06-03")
+}
+]);
+
+db.receipts.createIndex(
+    {user_id:1}
+);
+
+db.receipts.createIndex(
+    {receipt_no:1}
+);
+
+db.receipts.createIndex(
+    {date:1}
+);
+
+db.receipts.find(
+    {user_id:1}
+);
+
