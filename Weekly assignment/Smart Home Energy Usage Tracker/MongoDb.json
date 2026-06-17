@@ -1,0 +1,39 @@
+use SmartHomeEnergy
+
+db.sensor_logs.insertMany([
+{
+device_id:101,
+room:"Living Room",
+power_watts:120,
+timestamp:new Date("2026-06-01T10:00:00")
+},
+{
+device_id:102,
+room:"Kitchen",
+power_watts:250,
+timestamp:new Date("2026-06-01T11:00:00")
+},
+{
+device_id:103,
+room:"Bedroom",
+power_watts:1500,
+timestamp:new Date("2026-06-01T12:00:00")
+}
+])
+
+db.sensor_logs.createIndex({device_id:1})
+
+db.sensor_logs.createIndex({timestamp:1})
+
+db.sensor_logs.find()
+
+db.sensor_logs.find({device_id:101})
+
+db.sensor_logs.updateOne(
+    {device_id:101},
+    {$set:{power_watts:150}}
+)
+
+db.sensor_logs.deleteOne(
+    {device_id:103}
+)
